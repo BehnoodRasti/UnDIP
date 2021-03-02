@@ -13,6 +13,7 @@ IEEE Transactions on Geoscience and Remote Sensing
 Here, the ground truth abundances (right) are compared with the estimated ones using UnDIP (left) for Samson and Jasper Ridge Datasets.
 
 ![SamsonGIF](https://user-images.githubusercontent.com/61419984/109668183-34114500-7b71-11eb-926c-f27c833170c9.gif) 
+
 ![JasperGIF](https://user-images.githubusercontent.com/61419984/109668460-80f51b80-7b71-11eb-86a8-ab0976486c53.gif)
 
 
