@@ -36,7 +36,7 @@ dtype = torch.cuda.FloatTensor
 PLOT = False
 import scipy.io
 #%%
-fname2  = "C:/Users/Behnood/OneDrive - Háskóli Íslands/Python_Unmixing/Data/crop/5class/Y_clean.mat"
+fname2  = "C:/Users/Behnood/Data/crop/5class/Y_clean.mat"
 mat2 = scipy.io.loadmat(fname2)
 img_np_gt = mat2["Y_clean"]
 img_np_gt = img_np_gt.transpose(2,0,1)
@@ -150,5 +150,5 @@ for fj in tqdm(range(tol2)):
     p11 = get_params(OPT_OVER, net1, net_input1)
     optimize(OPTIMIZER1, p11, closure1, LR1, num_iter1)
     if  save_result is True:
-        scipy.io.savemat("C:/Users/behnood/OneDrive - Háskóli Íslands/out_avg_np.mat",
+        scipy.io.savemat("C:/Users/behnood/out_avg_np.mat",
                           {'out_avg_np':out_avg_np.transpose(1,2,0)})
