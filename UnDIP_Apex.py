@@ -36,7 +36,7 @@ dtype = torch.cuda.FloatTensor
 PLOT = False
 import scipy.io
 #%%
-fname2  = "C:/Users/Behnood/Data/crop/5class/Y_clean.mat"
+fname2  = "C:/Users/Behnood/OneDrive - Háskóli Íslands/Python_Unmixing/Data/crop/5class/Y_clean.mat"
 mat2 = scipy.io.loadmat(fname2)
 img_np_gt = mat2["Y_clean"]
 img_np_gt = img_np_gt.transpose(2,0,1)
@@ -49,6 +49,7 @@ import matplotlib.pyplot as plt
 import time
 from tqdm import tqdm
 tol2=5
+save_result= False
 TimeSec=np.zeros((tol2,1))
 for fj in tqdm(range(tol2)):
     start_time = time.time()
@@ -62,7 +63,7 @@ for fj in tqdm(range(tol2)):
     img_resh_np_clip=np.clip(img_resh_DN, 0, 1)
     II,III = Endmember_extract(img_resh_np_clip,rmax-1)
     E_np1=img_resh_np_clip[:,II]
-    E_np1=np.concatenate((E_np1, np.zeros((285,1))), axis=1)
+    E_np1=np.concatenate((E_np1, np.zeros((285,1))), axis=1)# adding zero endmemebr for shadow 
     #%% Set up Simulated 
     INPUT = 'noise' # 'meshgrid'
     pad = 'reflection'
@@ -76,7 +77,7 @@ for fj in tqdm(range(tol2)):
     show_every = 100
     exp_weight=0.99
     
-    num_iter1 = 3000
+    num_iter1 = 3
     input_depth = rmax#img_noisy_np.shape[0]
     class CAE_AbEst(nn.Module):
         def __init__(self):
@@ -148,3 +149,6 @@ for fj in tqdm(range(tol2)):
     
     p11 = get_params(OPT_OVER, net1, net_input1)
     optimize(OPTIMIZER1, p11, closure1, LR1, num_iter1)
+    if  save_result is True:
+        scipy.io.savemat("C:/Users/behnood/OneDrive - Háskóli Íslands/out_avg_np.mat",
+                          {'out_avg_np':out_avg_np.transpose(1,2,0)})
