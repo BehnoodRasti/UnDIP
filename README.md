@@ -8,7 +8,7 @@ Rasti, B.,  Koirala, B., Scheunders, P., and Ghamisi, P.,
 "UnDIP: Hyperspectral Unmixing Using Deep Image Prior" 
 IEEE Transactions on Geoscience and Remote Sensing
 
-
+Not that the copyright of the DIP software (https://github.com/DmitryUlyanov/deep-image-prior) used in UnDIP uploaded here is preseved.
 
 Here, the ground truth abundances (right) are compared with the estimated ones using UnDIP (left) for Samson and Jasper Ridge Datasets.
 
