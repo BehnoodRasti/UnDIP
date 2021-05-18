@@ -10,6 +10,8 @@ IEEE Transactions on Geoscience and Remote Sensing
 
 Not that the copyright of the DIP software (https://github.com/DmitryUlyanov/deep-image-prior) partially used in UnDIP and uploaded here is preseved.
 
+UnDIP_Samson.py performs UnDIP (5 runs) on the Samson dataset for a range of SNR values (i.e., from 20 to 50 dB). 
+
 Here, the ground truth abundances (right) are compared with the estimated ones using UnDIP (left) for Samson and Jasper Ridge Datasets.
 
 ![SamsonGIF](https://user-images.githubusercontent.com/61419984/109668183-34114500-7b71-11eb-926c-f27c833170c9.gif) 
