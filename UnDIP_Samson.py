@@ -113,7 +113,7 @@ for fi in tqdm(range(tol1)):
                 super(CAE_AbEst, self).__init__()
                 # encoding layers
                 self.conv1 = nn.Sequential(
-                    skip(
+                     UnmixArch(
                             input_depth, rmax,
                             # num_channels_down = [8, 16, 32, 64, 128], 
                             # num_channels_up   = [8, 16, 32, 64, 128],
