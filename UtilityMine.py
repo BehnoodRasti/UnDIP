@@ -5,7 +5,7 @@ from skimage.util import *
 from skimage.metrics.simple_metrics import _as_floats
 from skimage.metrics.simple_metrics import mean_squared_error
 from skimage._shared.utils import * 
-from pymf.dist import l1_distance
+from .pymf.dist import l1_distance
 dtype_range = {np.bool_: (False, True),
                np.bool8: (False, True),
                np.float16: (-1, 1),
